@@ -4,3 +4,10 @@ node_js:
 matrix:
   allow_failures: 
   - node_js: node
+
+deploy:
+  provider: s3
+  access_key_id: "AKIAIZNKGQPJDMOEPZ6A"
+  secret_access_key: "OVcRKiTgon3QYXmMiI5wK0mY6M72mIjW+n1r5r3b3XwNCbuQ5NQ8PDbspncFVe/nIDk61zTqQ6aXalgq1wAgnHd8i8pCLsJURk+FL9W0d7K3fErTMc10HSAtP+aTMGlqYU1COBKLWz8fq1H27/KXwysXSi9kHluVyqchJE1oWpGgXBQ98dMdo9F3jS/7e8V0by1OUafxn7KLxW28bz60usJtNpxMV6ywosTV+9ZTbwyW2NNApeQpCuByEjazGq0dVF1dCQMOyziecjpBIvvIug+SaxrFhAAupNvoT13eXpJT6pheJiDd0q/Z/KBrpvWCA6RrtqEIGXQrH59P3LIFY1+l2jG0pYQw6oGezl6JCfJSUm7+2yyzCXW+CyT2BLkRilDemKD2VqN7sgU5BVxKOU5SvibL4w4ITHiAjo4FIZIQTh3t+3F/jtQvgvn2ALAtCkCEyhPSbqgsBgDkIIJ8nh4HtPZNr7FDPlg2Zsc1BzMczV+Mz6rz4RJw0T1dXNrnLI12js39VBe68ttarM6bf2dcMG4gAgs1uWhoQqWWHY50Q/aF2QO99EV+5CFwwrHaJIxrHfktWqebiKtmsZpV7mW7kSX8a/FeOCGIRq/9Cphvj2HgGmC/vCsQnmwEsxIH7QlMm8VQ34lxyVsNdyFpcED/sF7Q0JlutR2LqXhIaf8="
+  bucket: "coloursummarizer"
+  skip_cleanup: true
