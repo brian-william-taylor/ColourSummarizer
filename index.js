@@ -19,6 +19,19 @@ const app = express();
 
 app.post('/api/test_upload', upload.single('file'), (req, res) => {
   console.log('file uploaded!');
+  cmd.get('./K-Means/K-Means ../uploads/' + req.filename,
+        function(err, data, stderr){
+            res.json(	{"colors":	{
+            		"color0":	"#0B0902",
+            		"color1":	"#56667C",
+            		"color2":	"#AA9869",
+            		"color3":	"#3F2309",
+            		"color4":	"#8FB0C6",
+            		"color5":	"#252E3C",
+            		"color6":	"#0C0D12"
+            	}});
+         }
+     );
 });
 
 
