@@ -1,83 +1,36 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { get_colours } from '../actions';
 
 class ColourBar extends Component{
-  constructor() {
-    super()
+
+  renderColours() {
+    return this.props.colours.map(colour => {
+      return (
+        <div className="colourSelection col-lg-3 animated fadeIn" key={colour}>
+          <div className="colourOutline" style={{backgroundColor: colour}}>
+          </div>
+          <div className="colourName">
+            {colour}
+          </div>
+        </div>
+      );
+    });
   }
 
   render() {
     return (
-    <div className="colourBar">
+    <div className="colourBar ">
       <div className="row">
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-      </div>
-
-      <div className="row">
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
-
-        <div className="colourSelection col-lg-3">
-          <div className="colourOutline">
-          </div>
-          <div className="colourName">
-            #56667C
-          </div>
-        </div>
+        {this.renderColours()}
       </div>
     </div>
     );
   }
 }
 
-export default ColourBar;
+function mapStateToProps({ colours }){
+  return { colours };
+}
+
+export default connect(mapStateToProps) (ColourBar);

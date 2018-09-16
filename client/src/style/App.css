@@ -6,17 +6,23 @@ body
   background-color: #FFF;
   color: #black;
   text-align: center;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
 }
 
 
 footer{
-  position: fixed;
-  left: 0;
+  position: absolute;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  padding-bottom: 23px;
+  left: 0;
+  padding: 1rem;
+  padding-bottom: 30px;
+  background-color: white;
 }
 
 .upload-zone{
-  background-color: #4CB5F5;
+  background-color: #4fc3f7   ;
 }
