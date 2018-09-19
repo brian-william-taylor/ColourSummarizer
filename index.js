@@ -18,12 +18,12 @@ var upload = multer({ storage: storage });
 const app = express();
 
 app.post('/api/upload', upload.single('file'), (req, res) => {
-  cmd.get('./K-Means/k-means ./uploads/' + req.file.filename + 'print -j',
+  cmd.get('./K-Means/k-means ./uploads/' + req.file.filename + ' print -j',
         function(err, data, stderr){
-            //obj = JSON.parse(data);
-            //console.log(obj.colors.color0); 
-            console.log(req.file.filename);           
-            console.log(data);
+            obj = JSON.parse(data);
+            console.log(obj.colors.color0); 
+            //console.log(req.file.filename);           
+            //console.log(data);
             var filePath = './uploads/' + req.file.filename;
             fs.access(filePath, error => {
                 if (!error) {
@@ -36,14 +36,6 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
             });
 
             res.json([
-              "#0B0902",
-              "#56667C",
-              "#AA9869",
-              "#3F2309",
-              "#8FB0C6",
-              "#252E3C",
-              "#0C0D12"
-              /*
               obj.colors.color0,
               obj.colors.color1,
               obj.colors.color2,
@@ -51,10 +43,7 @@ app.post('/api/upload', upload.single('file'), (req, res) => {
               obj.colors.color4,
               obj.colors.color5,
               obj.colors.color6
-              */
-
-
-            	]);
+            ]);
          }
      );
 });
